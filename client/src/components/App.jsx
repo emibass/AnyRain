@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import CityInput from "./CityInput";
-import WeatherData from "./WeatherData";
+import WeatherTable from "./WeatherTable";
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <div>   
 <Header />
 <CityInput />
-<WeatherData />  
+<WeatherTable />  
    </div>
   );
 }

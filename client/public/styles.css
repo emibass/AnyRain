@@ -92,14 +92,15 @@ button {
 table {
   border: 1px solid rgba(252, 252, 252, 0.4);
   background-color: rgba(252, 252, 252, 0.2);
-  max-width: 80%;
+  width: 600px;
   border-radius: 3px;
   font-family: "Source Sans Pro", sans-serif;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
+  padding: 20px;
+  margin: auto;
   display: block;
   text-align: center;
-  font-size: 18px;
+  font-size: 1em;
   color: white;
   font-weight: 300;
+  border-spacing: 10px;
 }
