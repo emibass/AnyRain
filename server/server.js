@@ -4,9 +4,10 @@ const express =require('express');
 const cors     = require("cors");
 const app = express();
 const PORT = process.env.PORT || 8080;
-// const axios = require('axios');
 const fetch = require('node-fetch');
 
+
+let location;
 
 // Middleware
 app.use(express.json());
@@ -20,10 +21,28 @@ app.get('/', (req, res) => {
 	res.send('PORT 8080');
 });
 
+//getting location from user input
+
+app.post("/API/location", function (req, res){
+  location = req.body.location;
+
+if (!location){
+  res.redirect("/error");
+}else{
+  res.redirect("/");
+}
+
+});
+
+
+//getting weather data from OpenWeatherMap API
 
 app.get("/API/weather", function (req, res){
 
-const URL = (process.env.OPEN_WEATHER_URL);
+const baseURL ="http://api.openweathermap.org/data/2.5/forecast?q=";
+const API_KEY = (process.env.API_KEY);
+
+const URL = baseURL + location + API_KEY;
 
 fetch(URL)
 .then(res => res.json())
@@ -33,10 +52,6 @@ fetch(URL)
 		.catch(err => {
 			console.log(err);
 		});
-
-//axios option to get data
-// axios.get(URL)
-//   .then(res => console.log(res.data));
 
 });
 

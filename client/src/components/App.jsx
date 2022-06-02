@@ -6,11 +6,11 @@ import WeatherTable from "./WeatherTable";
 function App() {
 
   return (
-    <div>   
+<div>
 <Header />
 <CityInput />
 <WeatherTable />  
-   </div>
+</div>
   );
 }
 

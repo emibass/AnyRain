@@ -1,41 +1,32 @@
 import React, {useState} from "react";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+
 
 
 //getAllCities
 
 function CityInput() {
 
-const [city, setCity] = useState("");
+const [location, setLocation] = useState("");
 
-function selectCity(event) {
-    const newValue = (event.target.value);
-    setCity(newValue);
+const searchLocation = (event) => {
+ if (event.key === 'Enter') {
+   setLocation(event.target.value);
+  }
 }
 
 return(
     <div className="container">
-    <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-      <InputLabel  id="cityInput">City</InputLabel>
-      <Select
-        labelId="labelID"
-        id="city"
-        value={city}
-        onChange={selectCity}
-        label="City"
-        autoComplete="on"
-      >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={"Auckland"}>Auckland</MenuItem>
-        <MenuItem value={"Katowice"}>Katowice</MenuItem>
-        <MenuItem value={"Krakow"}>Krakow</MenuItem>
-      </Select>
-    </FormControl>
+ <div className="search">
+ <form method="POST" action='/API/location'>
+        <input
+          value={location}
+          onChange={event => setLocation(event.target.value)}
+          onKeyPress={searchLocation}
+          placeholder='Enter Location'
+          type="text"
+          name="location" />
+          </form>
+      </div>
     </div>
 )
 }

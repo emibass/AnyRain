@@ -1,13 +1,23 @@
 import React from "react";
-import Grid from '@mui/material/Grid';
 
 function WeatherData(props){
 
     return(
         <div className="container">
-          <Grid container spacing={0.5} columns={1}>
-                <Item>{props.temp}</Item>   
-      </Grid>
+        <table>
+        <thead>
+            <th>Temperature</th>
+            <th>Weather</th>
+            <th>Any rain?</th>
+            </thead>
+            <tbody>
+        <tr>
+            <td>{props.temp}&#8451;</td>
+            <td>{props.icon}</td>
+            <td>{props.rain}</td>
+        </tr>
+        </tbody>
+        </table>
         </div>
     )
             }
