@@ -9,7 +9,7 @@ function App() {
 <div>
 <Header />
 <CityInput />
-<WeatherTable />  
+<WeatherTable  />
 </div>
   );
 }

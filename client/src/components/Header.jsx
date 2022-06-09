@@ -2,9 +2,12 @@ import React from "react";
 
 function Header(){
    return (
+    <div>
     <header>
     <h1>Any rain?</h1>
-    </header>)
+    </header>
+    </div> 
+)
 };
 
 export default Header;

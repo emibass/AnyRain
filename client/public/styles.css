@@ -1,34 +1,41 @@
-body {
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-}
+
   * {
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Segoe UI', 'Roboto', 'Oxygen';
+    font-family: 'Josefin Sans', sans-serif;
     padding: 0;
   
   }
 
   html {
-    background-image: linear-gradient(to top, #1160d6, #008fe5, #00aec0, #1bc48c, #b3d170);
+    background-image: linear-gradient(to top, rgba(67,197,170,1) 42%, rgba(0,152,255,1) 55%);
+    background-repeat: no-repeat;
+
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
   }
   
   body {
-
-    font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
     color:white;
   }
+
+
   header {
     margin: auto;
     padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
   }  
 
   p {
@@ -40,11 +47,22 @@ body {
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   
-
+  .smallIcon {
+    height: 25px;
+    width: 25px;
+  }
   
+  .bigIcon {
+    height: 100px;
+    width: 100px;
+    position:relative;
+    opacity: 0.7;
+  }
+
+
  .search {
     text-align: center;
     padding: 1rem;
@@ -52,7 +70,7 @@ body {
   
   input {
     padding: .7rem 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 25px;
     border: 1px solid rgba(255,255,255, 0.8);
     background: rgba(255,255,255, 0.1);
@@ -68,11 +86,11 @@ body {
     max-width: 600px;
     height:fit-content;
     margin: auto;
-    padding: 0 1rem;
+    padding: 0;
     position: relative;
     top: 10%;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: space-between;
   }
   
@@ -90,17 +108,22 @@ body {
   
   .location {
     text-align: left;
+    padding: 1rem;
   }
 
  .date {
     position: relative;
-    right: -50%;
+    left: 5%;
+    top: 80px;
     transform-origin: 0 0;
-    transform: rotate(90deg);
+    transform: rotate(270deg);
   }
 
-  .rain {
-    padding-left: 10px;
+
+  .middle {
+    height: 200px;
+    position: relative;
+    padding: 1rem;
   }
 
  .bottom {
@@ -113,8 +136,118 @@ body {
     padding: 10px;
     border-radius: 12px;
     background-color: rgba(255,255,255, 0.2);
+    flex-flow: row wrap;
   }
+
+  .bottom > * {
+    flex: 1 1;
+  }
+
+  .flexItem {
+    width: 100px;
+  }
+
   
   .bold {
     font-weight: 700;
+  }
+
+  .big {
+    font-size: 5rem;
+    font-weight: 100;
+  }
+
+
+  /* SMALL SCREENS */
+
+  @media only screen and (max-width: 600px){
+
+  html {
+      background-image: linear-gradient(to top, rgba(67,197,170,1) 32%, rgba(0,152,255,1) 55%);
+      background-repeat: repeat-x;
+    }
+  body {
+      height: 100vh;
+    }
+  
+  header {
+      position: fixed;
+    }
+
+  p {
+    font-size: 12px;
+  }
+
+  .location {
+   position: fixed;
+   top: 280px;
+   padding: 1rem;
+    }
+
+  .search {
+      position: fixed;
+      top: 80px;
+      left: 0px;
+    }
+
+  .not_found {
+      text-align: left;
+      font-size: x-small;
+      position: fixed;
+      top: 150px;
+      padding: 1rem;
+      left: 10px;
+    }
+
+  .container {
+      text-align: center;
+      max-width: fit-content;
+      height:fit-content;
+      margin: auto;
+      padding: 0;
+      position: relative;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+    }
+
+  .middle {
+      height: 150px;
+      position: fixed;
+      top: 150px;
+      padding: 1rem;
+    }
+
+  .bigIcon {
+      height: 100px;
+      width: 100px;
+      position:fixed;
+      opacity: 0.4;
+      top: 150px;
+      right: 50px;
+    }
+
+  .description {
+    text-align: left;
+  }
+
+  .bottom {
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      width: 100%;
+      border-radius: 12px;
+      background-color: rgba(255,255,255, 0.2);
+      flex-wrap: nowrap;
+      position:relative;
+      top: 320px;
+   
+    }
+  .bottom > * {
+      flex: 1 1;
+    }
+  
+  .flexItem {
+      width: 80px;
+    }
   }
