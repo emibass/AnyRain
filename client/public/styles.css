@@ -15,8 +15,7 @@
     height: 100%;
   
     /* Center and scale the image nicely */
-    background-position: center;
-    background-size: cover;
+   background-attachment: fixed;
   }
   
   body {
@@ -27,7 +26,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    color:white;
+    color: white;
   }
 
 
@@ -53,13 +52,15 @@
   .smallIcon {
     height: 25px;
     width: 25px;
+    color: white;
   }
   
   .bigIcon {
     height: 100px;
     width: 100px;
-    position:relative;
     opacity: 0.7;
+    position: relative;
+    margin: auto;
   }
 
 
@@ -80,17 +81,14 @@
   ::placeholder {
     color: #f8f8f8;
   }
-  
   .container {
     text-align: center;
-    max-width: 600px;
+    max-width: fit-content;
     height:fit-content;
     margin: auto;
     padding: 0;
     position: relative;
-    top: 10%;
     display: flex;
-    flex-flow: column wrap;
     justify-content: space-between;
   }
   
@@ -107,46 +105,53 @@
   }
   
   .location {
-    text-align: left;
+    text-align: center;
     padding: 1rem;
   }
 
  .date {
     position: relative;
     left: 5%;
-    top: 80px;
+    top: 30px;
     transform-origin: 0 0;
     transform: rotate(270deg);
   }
 
 
   .middle {
-    height: 200px;
-    position: relative;
+    height: 100px;
+    text-align: center;
     padding: 1rem;
   }
 
- .bottom {
+  .bottom {
     display: flex;
     justify-content: space-evenly;
-    text-align: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 10px;
+    text-align: center; 
     border-radius: 12px;
     background-color: rgba(255,255,255, 0.2);
-    flex-flow: row wrap;
-  }
+    position: relative;
+    flex-wrap: wrap;
+    width: 50%;
+    flex-flow: column;
+    top: 100px; 
+    padding: 1rem;
+    margin: auto;
+  } 
 
   .bottom > * {
-    flex: 1 1;
-  }
+    flex: 1 1 80px;
+  } 
 
   .flexItem {
-    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    height: 80px;
+    justify-content: space-around;
+    width: 300px;
+    margin: auto;
   }
-
   
   .bold {
     font-weight: 700;
@@ -165,6 +170,7 @@
   html {
       background-image: linear-gradient(to top, rgba(67,197,170,1) 32%, rgba(0,152,255,1) 55%);
       background-repeat: repeat-x;
+      background-attachment: fixed;
     }
   body {
       height: 100vh;
@@ -201,7 +207,7 @@
 
   .container {
       text-align: center;
-      max-width: fit-content;
+      width: 100%;
       height:fit-content;
       margin: auto;
       padding: 0;
@@ -216,7 +222,10 @@
       position: fixed;
       top: 150px;
       padding: 1rem;
-    }
+      float: none;
+      margin-left: 0;
+      }
+    
 
   .bigIcon {
       height: 100px;
@@ -227,27 +236,52 @@
       right: 50px;
     }
 
+  .smallIcon {
+      height: 25px;
+      width: 25px;
+      color: white;
+    }
+
   .description {
     text-align: left;
   }
 
   .bottom {
       display: flex;
-      justify-content: space-evenly;
       text-align: center;
-      width: 100%;
       border-radius: 12px;
       background-color: rgba(255,255,255, 0.2);
-      flex-wrap: nowrap;
+      background-repeat: repeat-x;
+      flex-wrap: wrap;
       position:relative;
       top: 320px;
-   
+      flex-flow: row;
+      margin: auto;
+      width: max-content;
+
     }
   .bottom > * {
-      flex: 1 1;
+      flex: 1 1 80px;
     }
   
   .flexItem {
       width: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      justify-content: space-around;
+      margin: auto;
+      height: 120px;
     }
+
+    .date {
+     position: relative;
+     margin-top: 0;
+     margin-bottom: 30px;
+     text-align: center;
+     transform: none;
+  
+    }
+  
   }
+

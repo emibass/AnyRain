@@ -22,7 +22,7 @@ return(
           value={location}
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder='Enter Location'
+          placeholder='Enter City'
           type="text"
           name="location" />
           </form>

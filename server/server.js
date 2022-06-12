@@ -46,13 +46,30 @@ const URL = baseURL + location + API_KEY;
 
 fetch(URL)
 .then(res => res.json())
-		.then(data => {
-			res.send({ data });
-		})
-		.catch(err => {
-			console.log(err);
-		});
+.then(data => {
+	res.send({ data });
+	})
+.catch(err => {
+	console.log(err);
+	});
 
+});
+
+app.get("API/currentWeather", function (req, res){
+
+	const cwURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+	const API_KEY = (process.env.API_KEY);
+
+	const fullURL = cwURL + location + API_KEY;
+
+fetch(fullURL)
+.then(res => res.json())
+.then(data => {
+	res.send({data});
+	})
+.catch(err => {
+	console.log(err);
+});
 });
 
 app.listen(PORT, () => {

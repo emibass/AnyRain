@@ -18,7 +18,7 @@ function WeatherTable(){
     .then((res) => res.json())
     .then((res) => {
 
-        setItems(res.data);
+        setItems(res.data); // listItems
         setIsLoading(false);
         setWeatherInfo((res.data.list).map(forecast => {
           return {
@@ -26,7 +26,7 @@ function WeatherTable(){
             weather: forecast.weather[0].description,
             icon: forecast.weather[0].icon,
             dayOfWeek: daysOfWeek[new Date(forecast.dt_txt).getDay()],
-            // timeOfDay: new Date(forecast.dt_txt).getHours(), // How to get the correct local time? 
+            timeOfDay: new Date(forecast.dt_txt).getTime(), // How to get the correct local time? 
             rain: forecast.rain? forecast.rain["3h"] : 0,
           }
         }))
@@ -67,17 +67,17 @@ else {
      : null}
    </div>
    {listItems.city ?
-  <div className="container">
+  <div>
         <div className="location">
        {listItems.city ?  <h2>{listItems.city.name}, {listItems.city.country}</h2> : null}
     </div>
 
-    <div className="container">
+
     <div className="bottom">
     {!!weatherInfo && weatherInfo.map((i , index) => (
       <div key={index}>
       <WeatherData 
-        // timeOfDay={i.timeOfDay}
+        timeOfDay= {listItems.city ? new Date ((i.timeOfDay) + (listItems.city.timezone * 1000)).getHours() : null}
         temp={i.temp} 
         icon={i.icon}
         dayOfWeek={i.dayOfWeek}
@@ -85,7 +85,7 @@ else {
         />
     </div>))}
     </div>
-    </div>
+ 
 
 </div>  
 : null }
