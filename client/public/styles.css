@@ -8,7 +8,7 @@
   }
 
   html {
-    background-image: linear-gradient(to top, rgba(67,197,170,1) 42%, rgba(0,152,255,1) 55%);
+    background-image: linear-gradient(to top, rgba(20,71,138,1) 32%, rgba(0,152,255,1) 55%);
     background-repeat: no-repeat;
 
     /* Full height */
@@ -60,7 +60,8 @@
     width: 100px;
     opacity: 0.7;
     position: relative;
-    margin: auto;
+    margin:auto;
+    padding: 7px;
   }
 
 
@@ -129,7 +130,7 @@
     justify-content: space-evenly;
     text-align: center; 
     border-radius: 12px;
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(255,255,255, 0.1);
     position: relative;
     flex-wrap: wrap;
     width: 50%;
@@ -162,13 +163,17 @@
     font-weight: 100;
   }
 
+  footer {
+    text-align: center;
+    margin-top: 10px;
+  }
 
   /* SMALL SCREENS */
 
   @media only screen and (max-width: 600px){
 
   html {
-      background-image: linear-gradient(to top, rgba(67,197,170,1) 32%, rgba(0,152,255,1) 55%);
+      background-image: linear-gradient(to top,  rgba(20,71,138,1) 32%, rgba(0,152,255,1) 55%);
       background-repeat: repeat-x;
       background-attachment: fixed;
     }
@@ -231,9 +236,9 @@
       height: 100px;
       width: 100px;
       position:fixed;
-      opacity: 0.4;
+      opacity: 0.7;
       top: 150px;
-      right: 50px;
+      right: 40px;
     }
 
   .smallIcon {
@@ -250,7 +255,7 @@
       display: flex;
       text-align: center;
       border-radius: 12px;
-      background-color: rgba(255,255,255, 0.2);
+      background-color: rgba(255,255,255, 0.1);
       background-repeat: repeat-x;
       flex-wrap: wrap;
       position:relative;

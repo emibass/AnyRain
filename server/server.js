@@ -35,7 +35,7 @@ if (!location){
 });
 
 
-//getting weather data from OpenWeatherMap API
+//getting weather forecast from OpenWeatherMap API
 
 app.get("/API/weather", function (req, res){
 
@@ -55,12 +55,14 @@ fetch(URL)
 
 });
 
-app.get("API/currentWeather", function (req, res){
+//current weather Info from OpenWeatherMap
 
-	const cwURL = "https://api.openweathermap.org/data/2.5/weather?q=";
-	const API_KEY = (process.env.API_KEY);
+app.get("/API/currentWeather", function (req, res){
 
-	const fullURL = cwURL + location + API_KEY;
+const cwURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+const API_KEY_cw = (process.env.API_KEY_cw);
+
+const fullURL = cwURL + location + API_KEY_cw;
 
 fetch(fullURL)
 .then(res => res.json())

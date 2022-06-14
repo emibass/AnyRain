@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
-import WeatherData from "./WeatherData";
-import CurrentWeather from "./CurrentWeather";
+import ForecastData from "./ForecastData";
 
-function WeatherTable(){
+function Forecast(){
 
   const [weatherInfo, setWeatherInfo] = useState();
   const [listItems, setItems] = useState({});
@@ -26,7 +25,7 @@ function WeatherTable(){
             weather: forecast.weather[0].description,
             icon: forecast.weather[0].icon,
             dayOfWeek: daysOfWeek[new Date(forecast.dt_txt).getDay()],
-            timeOfDay: new Date(forecast.dt_txt).getTime(), // How to get the correct local time? 
+            timeOfDay: new Date(forecast.dt_txt).getTime(),
             rain: forecast.rain? forecast.rain["3h"] : 0,
           }
         }))
@@ -56,16 +55,7 @@ else if(isLoading){
 else {
 
  return (
-  <div>
-   <div className="middle">
-   {weatherInfo ?
-     <CurrentWeather 
-       temp = {Math.round(listItems.list? listItems.list[0].main.temp : null)}
-       description = {listItems.list? listItems.list[0].weather[0].description : null}
-       icon = {listItems.list? listItems.list[0].weather[0].icon : null}
-     />
-     : null}
-   </div>
+  <div>   
    {listItems.city ?
   <div>
         <div className="location">
@@ -76,7 +66,7 @@ else {
     <div className="bottom">
     {!!weatherInfo && weatherInfo.map((i , index) => (
       <div key={index}>
-      <WeatherData 
+      <ForecastData
         timeOfDay= {listItems.city ? new Date ((i.timeOfDay) + (listItems.city.timezone * 1000)).getHours() : null}
         temp={i.temp} 
         icon={i.icon}
@@ -93,4 +83,4 @@ else {
  )};
 
 }
-export default WeatherTable;
+export default Forecast;

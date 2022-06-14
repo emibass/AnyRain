@@ -1,6 +1,6 @@
 import React from "react";
 
-function WeatherData({temp, weather, icon, dayOfWeek, timeOfDay, rain}){
+function ForecastData({temp, weather, icon, dayOfWeek, timeOfDay, rain}){
 
     return(
         <div className="flexItem">
@@ -20,11 +20,11 @@ function WeatherData({temp, weather, icon, dayOfWeek, timeOfDay, rain}){
          <p className="bold">{temp}&#8451;</p>
 
          <p> <img className="smallIcon"
-            alt={weather}
+            alt='weather Icons by flaticon Freepick'
             src={`../icons/${icon}.png`}></img>
          </p>  
           </div>
     )
             }
 
-export default WeatherData;
+export default ForecastData;
