@@ -10,9 +10,11 @@ function App() {
   return (
 <div>
 <Header />
+<div className="wrapper">
 <CityInput />
 <CurrentWeather />
 <Forecast  />
+</div>
 <Footer />
 </div>
   );

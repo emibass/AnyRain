@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 function Footer(){
     return (
         <footer>
-          <p>  <GitHubIcon url="https://github.com/emibass" /> Copyright emibass ⓒ</p>
+          <p><a href="https://github.com/emibass"><GitHubIcon fontSize="small" color="primary"/></a> copyright emibass ⓒ</p>
         </footer>
       );
 }
