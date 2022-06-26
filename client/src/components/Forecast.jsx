@@ -12,7 +12,9 @@ function Forecast(){
 
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-        setIsLoading(true);
+    setIsLoading(true);
+
+ 
     fetch("/API/weather")
     .then((res) => res.json())
     .then((res) => {

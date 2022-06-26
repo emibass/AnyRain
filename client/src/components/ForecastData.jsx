@@ -1,6 +1,6 @@
 import React from "react";
 
-function ForecastData({temp, weather, icon, dayOfWeek, timeOfDay, rain}){
+function ForecastData({temp, icon, dayOfWeek, timeOfDay, rain}){
 
     return(
         <div className="flexItem">

@@ -1,9 +1,5 @@
 import React, {useState} from "react";
 
-
-
-//getAllCities
-
 function CityInput() {
 
 const [location, setLocation] = useState("");
@@ -15,7 +11,7 @@ const searchLocation = (event) => {
 }
 
 return(
-    <div className="container">
+<div className="container">
  <div className="search">
  <form method="POST" action='/API/location'>
         <input
